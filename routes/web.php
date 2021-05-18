@@ -18,11 +18,12 @@ use App\Http\Controllers\MainController;
 Route::post('/registersave',[MainController::class,'save'])->name('registersave');
 Route::post('/logincheck',[MainController::class,'check'])->name('logincheck');
 Route::get('/logout',[MainController::class,'logout'])->name('logout');
-Route::get('/about',[MainController::class,'about'])->name('about');
 
 Route::group(['middleware'=>['UserCheck']],function(){
     Route::get('/login',[MainController::class,'login'])->name('login');
     Route::get('/register',[MainController::class,'register'])->name('register');
     Route::get('/userhome',[MainController::class,'home'])->name('userhome');
     Route::get('/profile',[MainController::class,'profile'])->name('profile');
+    Route::get('/about',[MainController::class,'about'])->name('about');
+    Route::get('/venues',[MainController::class,'venues'])->name('venues');
 });

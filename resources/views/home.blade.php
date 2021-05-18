@@ -4,7 +4,6 @@
 <div class="container">
     <div class="row">
         <div class="col col-12 col-sm-12 col-md-12 col-lg-12">
-
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -16,21 +15,18 @@
     </div>
   </div>
 </div>
-
         </div>
       </div>
-      <br>
-      <br>     
-      <br>
 </div>
 <nav class="navbar navbar-light bg-danger">
   <div class="container-fluid">
     <div class="container">
     <br>
-    <center><font color="white"><h1>Our Services</h1></font></center>
+    <br>
     <div class="row">
       <div class="col col-12 col-sm-4 col-md-4 col-lg-4"></div>
       <div class="col col-12 col-sm-4 col-md-4 col-lg-4">
+        <font color="white"><center><font color="white"><h1>Our Services</h1></font></center></font>
         <font color="white"><b><hr></b></font>
       </div>
       <div class="col col-12 col-sm-4 col-md-4 col-lg-4"></div>
@@ -96,17 +92,83 @@
     </div>
   </div>
 </nav>
-<br>
-<br>
-<div class="container">
-<center><font><h1>We Are Present In</h1></font></center>
-<center><font><h4>10 Cities of Kerala</h4></font></center>
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+  <div class="container">
+  <br>
+  <br>
 <div class="row">
       <div class="col col-12 col-sm-3 col-md-3 col-lg-3"></div>
       <div class="col col-12 col-sm-6 col-md-6 col-lg-6">
-        <b><hr></b>
+      <center><font><h1>We Are Present In</h1></font></center>
+      <center><font><h4>8 Cities of Kerala</h4></font></center>
+      <b><hr></b>
       </div>
       <div class="col col-12 col-sm-3 col-md-3 col-lg-3"></div>
     </div>
+    <br>
+    <div class="row">
+      <div class="col col-12 col-sm-3 col-md-3 col-lg-3">
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img height="175px" src="https://i1.trekearth.com/photos/18313/20180202_093457.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption">
+      </div>
+    </div>
+    </div>
+  </div>
+  <p></p>
+  <center><h5>Trivandrum</h5></center>
+      </div>
+      <div class="col col-12 col-sm-3 col-md-3 col-lg-3">
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://static2.tripoto.com/media/filter/tst/img/382230/TripDocument/1495744480_varkala_beach65.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption">
+      </div>
+    </div>
+    </div>
+  </div>
+  <p></p>
+  <center><h5>Calicut</h5></center>
+      </div>
+      <div class="col col-12 col-sm-3 col-md-3 col-lg-3">
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/3b/12/9f/spice-harbour.jpg?w=900&h=-1&s=1" class="d-block w-100" alt="...">
+      <div class="carousel-caption">
+      </div>
+    </div>
+    </div>
+  </div>
+  <p></p>
+  <center><h5>Cochin</h5></center>
+      </div>
+      <div class="col col-12 col-sm-3 col-md-3 col-lg-3">
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img height="171px" src="https://www.chillontrip.com/admin/assets/img/holiday/main/Backwater_of_Kerala4.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption">
+      </div>
+    </div>
+    </div>
+  </div>
+  <p></p>
+  <center><a href="/venues"><h5>More...</h5></a></center>
+      </div>
+    </div>
+    <br>
+    <br>
 </div>
+  </div>
+</nav>
+<br>
+<br>
+<center><a href="/about" class="btn btn-outline-primary"><h4>More About Us</h4></a></center>
+<br>
+<br>
 @endsection

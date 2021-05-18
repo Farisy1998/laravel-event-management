@@ -30,6 +30,18 @@
         <li class="nav-item">
           <a class="nav-link" href="/venues"><h5>Venues</h5></a>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <h5>Booking</h5>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/venues">Venues</a></li>
+            <li><a class="dropdown-item" href="/photography">Photography</a></li>
+            <li><a class="dropdown-item" href="/makeup">Makeup</a></li>
+            <li><a class="dropdown-item" href="/mehendi">Mehendi</a></li>
+            <li><a class="dropdown-item" href="/decorations">Decorations</a></li>
+          </ul>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="/about"><h5>About</h5></a>
         </li>
