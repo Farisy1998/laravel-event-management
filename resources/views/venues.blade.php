@@ -10,7 +10,7 @@
     <hr>
     </div>
     <div class="col col-12 col-sm-4 col-md-4 col-lg-4">
-        <center><button class="btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft">Book For Events</button></center>
+        <center><button class="btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft">Enquire Now</button></center>
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasLeftLabel">
   <div class="offcanvas-header">
   <br>
@@ -154,6 +154,7 @@
     </div>
     <p></p>
     <center><h5>Pathanamthitta</h5></center>
+    <br>
     <br>
       </div>
     </div>

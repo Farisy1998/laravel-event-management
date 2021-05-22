@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In | Event Management</title>
+    <title>Sign In | Presentup</title>
     <style>
         *{
             margin: 0;
@@ -72,7 +72,7 @@
             <div class="container">
             <br>
             <br>
-            <center><font color="white"><h1>Event Management</h1></font></center>
+            <center><font color="white"><h1>Presentup Event Team</h1></font></center>
             <br>
                 <form action="/logincheck" method="post">
                 <h2>Sign In</h2>
@@ -86,6 +86,15 @@
                         {{{Session::get('fail')}}}
                     </div>
                     @endif
+                    <div class="form-group">
+                        <select class="form-select" name="acctype" aria-label="Default select example" required>
+                            <option selected>Account type</option>
+                            <option value="Admin">Admin</option>
+                            <option value="User">User</option>
+                        </select>
+                        <span class="text-danger">@error('acctype'){{$message}}  @enderror</span>
+                    </div>
+                    <p></p>
                     <div class="form-group">
                         <label><h5>Username</h5></label>
                         <input type="text" class="form-control" name="username" placeholder="Enter username" value="{{old('username')}}">
@@ -101,6 +110,7 @@
                         <button class="btn btn-outline-primary" type="submit">Login</button>
                         <br>
                         <br>
+                        <!--<a href="/admin_reg">Admin Registration</a>-->
                 </form>
                 <br>
                 <br>

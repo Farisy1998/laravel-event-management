@@ -48,7 +48,7 @@
           <div class="card" style="width: 18rem;">
             <img src="https://www.arjunkarthaphotography.com/wp-content/uploads/2016/11/online-wedding-photography-course-cover-1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title"><a href="/venues">Photography</a></h5>
+              <h5 class="card-title"><a href="/photography">Photography</a></h5>
               <p class="card-text">Photoshoot, Cinema/Video, Pre-wedding</p>
             </div>
           </div>
@@ -57,7 +57,7 @@
           <div class="card" style="width: 18rem;">
             <img src="https://i2.wp.com/www.weddingsutra.com/images/wedding-images/bride/mehendi_designs_pic5.jpg?ssl=1" height="190px" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title"><a href="/venues">Makeup</a></h5>
+              <h5 class="card-title"><a href="/makeup">Makeup</a></h5>
               <p class="card-text">Bridal Makeup, Family Makeup, Model Makeup</p>
             </div>
           </div>
@@ -71,7 +71,7 @@
         <div class="card" style="width: 18rem;">
             <img src="http://i1.wp.com/www.weddingmagazine.in/wp-content/uploads/2017/07/mehendi1.jpg?resize=2000" height="190px" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title"><a href="/venues">Mehendi</a></h5>
+              <h5 class="card-title"><a href="/mehendi  ">Mehendi</a></h5>
               <p class="card-text">Bridal Mehendi</p>
             </div>
           </div>
@@ -80,7 +80,7 @@
         <div class="card" style="width: 18rem;">
             <img src="https://i.pinimg.com/originals/7e/8d/85/7e8d8555599d0c5a33fe440fab544b24.jpg" height="190px" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title"><a href="/venues">Decorations</a></h5>
+              <h5 class="card-title"><a href="/decorations">Decorations</a></h5>
               <p class="card-text">Venue or Banquet Decorations</p>
             </div>
           </div>

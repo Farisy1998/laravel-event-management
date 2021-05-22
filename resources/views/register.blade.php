@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up | Event Management</title>
+    <title>Sign Up | Presentup</title>
     <style>
         *{
             margin: 0;
@@ -72,7 +72,7 @@
             <div class="container">
             <br>
             <br>
-            <center><font color="white"><h1>Event Management</h1></font></center>
+            <center><font color="white"><h1>Presentup Event Team</h1></font></center>
             <br>
                 <form action="/registersave" method="post">
                 <h2>Sign Up</h2>
@@ -114,18 +114,27 @@
                     <p></p>
                     <div class="form-group">
                         <label><h5>Address</h5></label>
-                        <textarea name="address" cols="30" rows="8" class="form-control" placeholder="Communication address" value="{{old('address')}}" required></textarea>
-                        
-                    </div>
-                    <p></p>
-                    <div class="form-group">
-                        <label><h5>State</h5></label>
-                        <input type="text" class="form-control" name="state" placeholder="Enter State" value="{{old('state')}}" required>
+                        <textarea name="address" cols="10" rows="5" class="form-control" placeholder="Communication address" value="{{old('address')}}" required></textarea>
+
                     </div>
                     <p></p>
                     <div class="form-group">
                         <label><h5>District</h5></label>
-                        <input type="text" class="form-control" name="district" placeholder="Enter district" value="{{old('district')}}" required>
+                        <select name="district" class="form-select">
+                            <option value="Alappuzha">Alappuzha</option>
+                            <option value="Ernakulam">Ernakulam</option>
+                            <option value="Idukki">Idukki</option>
+                            <option value="Kannur">Kannur</option>
+                            <option value="Kasargode">Kasargode</option>
+                            <option value="Kollam">Kollam</option>
+                            <option value="Kozhikode">Kozhikode</option>
+                            <option value="Malappuram">Malappuram</option>
+                            <option value="Palakkad">Palakkad</option>
+                            <option value="Pathanamthitta">Pathanamthitta</option>
+                            <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                            <option value="Thrissur">Thrissur</option>
+                            <option value="Wayanad">Wayanad</option>
+                        </select>
                     </div>
                     <p></p>
                     <div class="form-group">

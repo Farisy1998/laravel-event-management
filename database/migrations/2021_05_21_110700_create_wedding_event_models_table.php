@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRegisterModelsTable extends Migration
+class CreateWeddingEventModelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,18 @@ class CreateRegisterModelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('register_models', function (Blueprint $table) {
+        Schema::create('wedding_event_models', function (Blueprint $table) {
             $table->id();
             $table->string('fname');
             $table->string('lname');
-            $table->string('gender');
-            $table->string('dob');
-            $table->string('address');
-            $table->string('district');
-            $table->string('city');
             $table->string('email');
-            $table->string('phoneno');
             $table->string('username');
-            $table->string('password');
+            $table->string('start_date');
+            $table->string('start_time');
+            $table->string('end_date');
+            $table->string('end_time');
+            $table->string('partno');
+            $table->string('message',2000)->nullable();
             $table->timestamps();
         });
     }
@@ -37,6 +36,6 @@ class CreateRegisterModelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('register_models');
+        Schema::dropIfExists('wedding_event_models');
     }
 }
