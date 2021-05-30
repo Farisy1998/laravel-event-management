@@ -24,7 +24,7 @@ Route::get('/dashboard',[MainController::class,'dashboard'])->name('dashboard');
 Route::get('/register',[MainController::class,'register'])->name('register');
 
 Route::group(['middleware'=>['UserCheck']],function(){
-    Route::get('/login',[MainController::class,'login'])->name('login');
+    Route::get('/',[MainController::class,'login'])->name('login');
     Route::get('/userhome',[MainController::class,'home'])->name('userhome');
     Route::get('/profile',[MainController::class,'profile'])->name('profile');
     Route::get('/about',[MainController::class,'about'])->name('about');

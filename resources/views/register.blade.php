@@ -78,7 +78,7 @@
                 <h2>Sign Up</h2>
                 @csrf
                 <div class="alert alert-warning" role="alert">
-                        Already have an account&nbsp;&nbsp;<a href="/login">Sign In</a>
+                        Already have an account&nbsp;&nbsp;<a href="/">Sign In</a>
                     </div>
                     <br>
                     @if(Session::get('success'))
