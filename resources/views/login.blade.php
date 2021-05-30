@@ -14,7 +14,7 @@
         }
         body{
             min-height: 100hv;
-            background: url("https://www.99images.com/download-image/206242/1280x2272");
+            background: url("https://slataiweshpsb.files.wordpress.com/2014/02/a-group-of-colorful-and-glowing-flowers-flying-on-purple-background-is-indeed-good-looking-and-easy-to-apply-widescreen-flowery-background.jpg");
             display: flex;
             font-family: sans-serif;
         }

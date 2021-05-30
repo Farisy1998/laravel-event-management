@@ -1,10 +1,6 @@
 @extends('theme')
 @section('content')
-
-<div class="container">
-    <div class="row">
-        <div class="col col-12 col-sm-12 col-md-12 col-lg-12">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="https://i.pinimg.com/originals/05/64/a4/0564a44686c0ecdf562cd472a25b3cd3.jpg" height="500px" class="d-block w-100" alt="...">
@@ -14,9 +10,6 @@
       </div>
     </div>
   </div>
-</div>
-        </div>
-      </div>
 </div>
 <nav class="navbar navbar-light bg-danger">
   <div class="container-fluid">
@@ -48,8 +41,8 @@
           <div class="card" style="width: 18rem;">
             <img src="https://www.arjunkarthaphotography.com/wp-content/uploads/2016/11/online-wedding-photography-course-cover-1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title"><a href="/photography">Photography</a></h5>
-              <p class="card-text">Photoshoot, Cinema/Video, Pre-wedding</p>
+              <h5 class="card-title"><a href="/photoshoot">Photoshoot</a></h5>
+              <p class="card-text">Photoshooting, Videoshooting, Pre-weddingshooting</p>
             </div>
           </div>
         </div>
@@ -168,7 +161,7 @@
 </nav>
 <br>
 <br>
-<center><a href="/about" class="btn btn-outline-primary"><h4>More About Us</h4></a></center>
+<center><a href="/about" class="btn btn-outline-primary"><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; More About Us &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5></a></center>
 <br>
 <br>
 @endsection

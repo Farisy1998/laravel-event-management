@@ -10,6 +10,7 @@
 <br>
 <center><h2>Admin Registration</h2></center>
     <form action="/admin_save" method="post">
+    @csrf
     <table align="center" class="table table-borderless">
         <tr>
             <td>Username</td>
@@ -18,6 +19,10 @@
         <tr>
             <td>Password</td>
             <td><input type="password" name="password" class="form-control" required></td>
+        </tr>
+        <tr>
+            <td>Confirm password</td>
+            <td><input type="password" name="cpassword" class="form-control" required></td>
         </tr>
         <tr>
             <td></td>

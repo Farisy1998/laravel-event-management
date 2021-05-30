@@ -14,7 +14,7 @@
         }
         body{
             min-height: 100hv;
-            background: url("https://www.99images.com/download-image/206242/1280x2272");
+            background: url("https://slataiweshpsb.files.wordpress.com/2014/02/a-group-of-colorful-and-glowing-flowers-flying-on-purple-background-is-indeed-good-looking-and-easy-to-apply-widescreen-flowery-background.jpg");
             display: flex;
             font-family: sans-serif;
         }
@@ -103,8 +103,8 @@
                     <p></p>
                     <div class="form-group">
                         <label><h5>Gender</h5></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="radio"  name="flexRadioDefault" value="male" class="form-check-input" required> <label><h6>Male</h6></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="radio"  name="flexRadioDefault" value="female" class="form-check-input" required> <label><h6>Female</h6></label>
+                        <input type="radio"  name="flexRadioDefault" value="Male" class="form-check-input" required> <label><h6>Male</h6></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio"  name="flexRadioDefault" value="Female" class="form-check-input" required> <label><h6>Female</h6></label>
                     </div>
                     <p></p>
                     <div class="form-group">
@@ -121,6 +121,7 @@
                     <div class="form-group">
                         <label><h5>District</h5></label>
                         <select name="district" class="form-select">
+                            <option disabled selected>Select</option>
                             <option value="Alappuzha">Alappuzha</option>
                             <option value="Ernakulam">Ernakulam</option>
                             <option value="Idukki">Idukki</option>
@@ -135,6 +136,7 @@
                             <option value="Thrissur">Thrissur</option>
                             <option value="Wayanad">Wayanad</option>
                         </select>
+                        <span class="text-danger">@error('district'){{$message}} @enderror</span>
                     </div>
                     <p></p>
                     <div class="form-group">
@@ -167,8 +169,8 @@
                     <p></p>
                     <div class="form-group">
                         <label><h5>Confirm password</h5></label>
-                        <input type="password" class="form-control" name="cpassword" placeholder="Re-enter password" >
-                        <span class="text-danger">@error('password'){{$message}} @enderror</span>
+                        <input type="password" class="form-control" name="confirm_password" placeholder="Re-enter password" >
+                        <span class="text-danger">@error('confirm_password'){{$message}} @enderror</span>
                     </div>
                     <p></p>
                     <br>

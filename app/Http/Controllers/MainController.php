@@ -3,10 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use App\Models\RegisterModel;
-use App\Models\WeddingBookingModel;
+use App\Models\PaymentModel;
+use App\Models\BanquetBookingModel;
+use App\Models\WeddingBanquetModel;
 use App\Models\WeddingEventModel;
+use App\Models\PartyVenueModel;
+use App\Models\EnquireModel;
+use Illuminate\Support\Facades\DB;
 use App\Models\AdminModel;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 
 class MainController extends Controller
@@ -17,11 +24,20 @@ class MainController extends Controller
     }
     function admin_save(Request $request)
     {
-        $adminmodel=new AdminModel();
-        $adminmodel->username=$request->username;
-        $adminmodel->password=Hash::make($request->password);
+        if($request->password != $request->cpassword)
+        {
+            echo "Passwords isn't matches. Try again.";
+        }
+        else
+        {
+            $adminmodel=new AdminModel();
+            $adminmodel->username=$request->username;
+            $adminmodel->password=Hash::make($request->password);
 
-        $adminmodel->save();
+            $adminmodel->save();
+
+            echo "Admin registration successfull.";
+        }
    }
     function dashboard()
     {
@@ -38,44 +54,39 @@ class MainController extends Controller
     function save(Request $request)
     {
         $request->validate([
+            'district'=>'required',
             'email'=>'required|email|unique:register_models',
             'username'=>'required|unique:register_models',
             'password'=>'required|min:4|max:5',
-            'cpassword'=>'required|min:4|max:5'
+            'confirm_password'=>'required|min:4|max:5'
         ]);
 
-        $register=new RegisterModel();
-        $register->fname=$request->fname;
-        $register->lname=$request->lname;
-        $register->gender=$request->flexRadioDefault;
-        $register->dob=$request->dob;
-        $register->address=$request->address;
-        $register->district=$request->district;
-        $register->city=$request->city;
-        $register->email=$request->email;
-        $register->phoneno=$request->phoneno;
-        $register->username=$request->username;
-        $register->password=Hash::make($request->password);
-
         $check_password=$request->password;
-        $check_cpassword=$request->cpassword;
+        $check_cpassword=$request->confirm_password;
 
-        $save=$register->save();
 
         if($check_password==$check_cpassword)
         {
-            if($save)
-            {
-                return back()->with('success','Registration successfull');
-            }
-            else
-            {
-                return back()->with('fail','Something went wrong, try again later');
-            }
+            $register=new RegisterModel();
+            $register->fname=$request->fname;
+            $register->lname=$request->lname;
+            $register->gender=$request->flexRadioDefault;
+            $register->dob=$request->dob;
+            $register->address=$request->address;
+            $register->district=$request->district;
+            $register->city=$request->city;
+            $register->email=$request->email;
+            $register->phoneno=$request->phoneno;
+            $register->username=$request->username;
+            $register->password=Hash::make($request->password);
+
+            $register->save();
+
+            return back()->with('success','Registration successfull.');
         }
         else
         {
-            return back()->with('fail',"Passwords isn't matches");
+            return back()->with('fail',"Passwords isn't matches.");
         }
     }
     function check(Request $request)
@@ -92,7 +103,7 @@ class MainController extends Controller
             $admininfo=AdminModel::where('username','=',$request->username)->first();
             if(!$admininfo)
             {
-                return back()->with('fail','Invalid username');
+                return back()->with('fail','Invalid username.');
             }
             else
             {
@@ -103,7 +114,7 @@ class MainController extends Controller
                 }
                 else
                 {
-                    return back()->with('fail','Invalid password');
+                    return back()->with('fail','Invalid password.');
                 }
             }
         }
@@ -113,7 +124,7 @@ class MainController extends Controller
 
             if(!$userinfo)
             {
-                return back()->with('fail','Invalid username');
+                return back()->with('fail','Invalid username.');
             }
             else
             {
@@ -124,13 +135,13 @@ class MainController extends Controller
                 }
                 else
                 {
-                    return back()->with('fail','Invalid password');
+                    return back()->with('fail','Invalid password.');
                 }
             }
         }
         else
         {
-            return back()->with('fail','Select an account type');
+            return back()->with('fail','Select a account type.');
         }
     }
     function logout()
@@ -176,79 +187,73 @@ class MainController extends Controller
         $data=['LoggedUserInfo'=>RegisterModel::where('id','=',session('LoggedUser'))->first()];
         return view('weddingbooking', $data);
     }
-    function weddingevent()
+    function wedding_banquet_save(Request $request)
     {
-        return view('weddingevent');
-    }
-    /*function weddingevent(Request $request)
-    {
+        $request->validate([
+            'banquet_type'=>'required',
+            'banquet_style'=>'required',
+            'part_no'=>'required'
+        ]);
 
-        $data=RegisterModel::where('email','=',$request->email)->first();
+        $data=RegisterModel::where('id','=',session('LoggedUser'))->first();
 
-        $weddingbookingmodel= new WeddingBookingModel();
-        $weddingbookingmodel->fname=$request->fname;
-        $weddingbookingmodel->lname=$request->lname;
-        $weddingbookingmodel->email=$request->email;
-        $weddingbookingmodel->username=$data->username;
-        $weddingbookingmodel->mob=$request->mob;
-        $weddingbookingmodel->altmob=$request->altmob;
-        $weddingbookingmodel->bfrom=$request->bfrom;
-        $weddingbookingmodel->bto=$request->bto;
-        $weddingbookingmodel->blocation=$request->blocation;
-        $weddingbookingmodel->btype=$request->btype;
+        $weddingbanquetmodel= new WeddingBanquetModel();
+        $weddingbanquetmodel->username=$data->username;
+        $weddingbanquetmodel->banquet_type=$request->banquet_type;
 
-        $btype=$request->btype;
-        $amt=0;
-        if($btype=="Normal")
+        $banquet_type=$request->banquet_type;
+        $amt_per_person=0;
+        if($banquet_type=="Normal")
         {
-            $amt=$amt+1000;
+            $amt_per_person=$amt_per_person+1000;
         }
-        else if($btype=="Standard")
+        else if($banquet_type=="Standard")
         {
-            $amt=$amt+2000;
+            $amt_per_person=$amt_per_person+2000;
         }
         else
         {
-            $amt=$amt+3500;
+            $amt_per_person=$amt_per_person+3500;
         }
 
-        $weddingbookingmodel->amt=$amt;
-        $weddingbookingmodel->veg=$request->veg;
-        $weddingbookingmodel->non_veg=$request->non_veg;
-        $weddingbookingmodel->veg_imfl=$request->veg_imfl;
-        $weddingbookingmodel->non_veg_imfl=$request->non_veg_imfl;
-        $weddingbookingmodel->ex_liquor=$request->ex_liquor;
-        $weddingbookingmodel->ex_cooldrinks=$request->ex_cooldrinks;
-        $weddingbookingmodel->audio_visual=$request->audio_visual;
-        $weddingbookingmodel->live_cast=$request->live_cast;
-        $weddingbookingmodel->message=$request->message;
+        $weddingbanquetmodel->amt_per_person=$amt_per_person;
+        $weddingbanquetmodel->banquet_style=$request->banquet_style;
+        $weddingbanquetmodel->part_no=$request->part_no;
 
-        $save=$weddingbookingmodel->save();
+        $save=$weddingbanquetmodel->save();
 
         if($save)
         {
-            return view('weddingevent',$data);
+            return view('wedding_event');
         }
         else
         {
-            echo ' ! Something went wrong, try again later';
+            return back()->with('fail','Something went wrong. Try again later.');
         }
-
     }
-    function reg_payment(Request $request)
+    function wedding_event_save(Request $request)
     {
-        $data=WeddingBookingModel::where('id','=',session('LoggedUser'))->first();
+        $request->validate([
+            'start_date'=>'required|date|after:tomorrow',
+            'end_date'=>'required|date|after:start_date'
+        ]);
+
+        $data=RegisterModel::where('id','=',session('LoggedUser'))->first();
 
         $weddingeventmodel=new WeddingEventModel();
-        $weddingeventmodel->fname=$data->fname;
-        $weddingeventmodel->lname=$data->lname;
-        $weddingeventmodel->email=$data->email;
         $weddingeventmodel->username=$data->username;
         $weddingeventmodel->start_date=$request->start_date;
         $weddingeventmodel->start_time=$request->start_time;
         $weddingeventmodel->end_date=$request->end_date;
         $weddingeventmodel->end_time=$request->end_time;
-        $weddingeventmodel->partno=$request->partno;
+        $weddingeventmodel->veg=$request->veg;
+        $weddingeventmodel->non_veg=$request->non_veg;
+        $weddingeventmodel->veg_imfl=$request->veg_imfl;
+        $weddingeventmodel->non_veg_imfl=$request->non_veg_imfl;
+        $weddingeventmodel->ex_liquor=$request->ex_liquor;
+        $weddingeventmodel->ex_cool_drinks=$request->ex_cool_drinks;
+        $weddingeventmodel->audio_visual=$request->audio_visual;
+        $weddingeventmodel->live_casting=$request->live_casting;
         $weddingeventmodel->message=$request->message;
 
         $save=$weddingeventmodel->save();
@@ -259,16 +264,224 @@ class MainController extends Controller
         }
         else
         {
-            echo ' ! Something went wrong, try again later';
+            return back()->with('fail','Something went wrong. Try again later.');
         }
-
-    }*/
-    function reg_payment()
+    }
+    /*function reg_payment_save(Request $request)
     {
-        return view('reg_payment');
+        return view('payment_save');
+    }*/
+    function reg_payment_save(Request $request)
+    {
+        $r_data=RegisterModel::where('id','=',session('LoggedUser'))->first();
+        $b_data=BanquetBookingModel::where('username','=',$r_data->username)->first();
+
+        $status="Payed";
+        $reg_fee_amt=250;
+        $date=Carbon::now();
+        $pay_date=$date->toDateString();
+        $paymentmodel=new PaymentModel();
+        $paymentmodel->username=$r_data->username;
+        $paymentmodel->card_no=$request->card_no;
+        $paymentmodel->book_type=$b_data->book_type;
+        $paymentmodel->fee_type=$b_data->fee_type;
+        $paymentmodel->reg_fee_amt=$reg_fee_amt;
+        $paymentmodel->status=$status;
+        $paymentmodel->pay_date=$pay_date;
+
+        $save=$paymentmodel->save();
+
+        if($save)
+        {
+            return view('payment_save');
+        }
+        else
+        {
+            return back()->with('fail','Something went wrong. Try again later.');
+        }
+    }
+    function payment_save()
+    {
+        return view('payment_save');
     }
     function about()
     {
         return view('about');
+    }
+    function party_venue_save(Request $request)
+    {
+        $data=RegisterModel::where('id','=',session('LoggedUser'))->first();
+
+        $partyvenuemodel=new PartyVenueModel();
+        $partyvenuemodel->username=$data->username;
+        $partyvenuemodel->venue_type=$data->venue_type;
+
+        $venue_type=$request->venue_type;
+        $amt_per_person=0;
+        if($venue_type=="Normal")
+        {
+            $amt_per_person=$amt_per_person+800;
+        }
+        elseif($venue_type=="Standard")
+        {
+            $amt_per_person=$amt_per_person+1800;
+        }
+        else
+        {
+            $amt_per_person=$amt_per_person+3800;
+        }
+
+        $partyvenuemodel->amt_per_person=$amt_per_person;
+        $partyvenuemodel->party_type=$data->party_type;
+        $partyvenuemodel->venue_style=$data->venue_style;
+        $partyvenuemodel->part_no=$data->part_no;
+
+        $save=$partyvenuemodel->save();
+
+        if($save)
+        {
+            return view('party_event');
+        }
+        else
+        {
+            return back()->with('fail','Something went wrong. Try again later.');
+        }
+    }
+    function banquet_booking()
+    {
+        $data=['LoggedUserInfo'=>RegisterModel::where('id','=',session('LoggedUser'))->first()];
+
+        return view('banquet_booking', $data);
+    }
+    function banquet_booking_save(Request $request)
+    {
+        $request->validate([
+            'email'=>'required|email',
+            'from_date'=>'required|date|after:tomorrow',
+            'to_date'=>'required|date|after:from_date'
+
+        ]);
+
+        $data=RegisterModel::where('id','=',session('LoggedUser'))->first();
+
+        $fee_type="Registration / Booking fee";
+        $date=Carbon::now();
+        $book_date=$date->toDateString();
+        $banquetbookingmodel=new BanquetBookingModel();
+        $banquetbookingmodel->username=$data->username;
+        $banquetbookingmodel->fname=$request->fname;
+        $banquetbookingmodel->lname=$request->lname;
+        $banquetbookingmodel->email=$request->email;
+        $banquetbookingmodel->mob=$request->mob;
+        $banquetbookingmodel->alt_mob=$request->alt_mob;
+        $banquetbookingmodel->book_type=$request->book_type;
+        $banquetbookingmodel->fee_type=$fee_type;
+        $banquetbookingmodel->from_date=$request->from_date;
+        $banquetbookingmodel->to_date=$request->to_date;
+        $banquetbookingmodel->location=$request->location;
+        $banquetbookingmodel->book_date=$book_date;
+
+        $res_location=BanquetBookingModel::where('location','=', $request->location)->first();
+
+        if($request->location=="Select")
+        {
+            return back()->with('fail','Please select a Banquet / Venue location.');
+        }
+        else
+        {
+            if($res_location==NULL)
+            {
+                if($request->book_type=="Wedding banquet")
+                {
+                    $banquetbookingmodel->save();
+                    return view('wedding_banquet');
+                }
+                elseif($request->book_type=="Party venue")
+                {
+                    $banquetbookingmodel->save();
+                    return view('party_venue');
+                }
+                elseif($request->book_type=="Corporate venue")
+                {
+                    $banquetbookingmodel->save();
+                    return view('corporate_venue');
+                }
+                else
+                {
+                    return back()->with('fail','Please let us know, What you want to book.');
+                }
+            }
+            else
+            {
+                $res=DB::table('banquet_booking_models')->get();
+
+                $req_from_date=Carbon::createFromFormat('Y-m-d', $request->from_date);
+                $req_to_date=Carbon::createFromFormat('Y-m-d', $request->to_date);
+
+                foreach ($res as $row)
+                {
+                    $from_check = Carbon::createFromFormat('Y-m-d', $row->from_date)->between($req_from_date, $req_to_date);
+                    $to_check = Carbon::createFromFormat('Y-m-d', $row->to_date)->between($req_from_date, $req_to_date);
+
+                    if($from_check || $to_check)
+                    {
+                        return back()->with('fail','Banquet is already booked for or with in the selected dates or location.');
+                    }
+                    else
+                    {
+                        if($request->book_type=="Wedding banquet")
+                        {
+                            $banquetbookingmodel->save();
+                            return redirect('/wedding_banquet');
+                        }
+                        elseif($request->book_type=="Party venue")
+                        {
+                            $banquetbookingmodel->save();
+                            return view('party_venue');
+                        }
+                        elseif($request->book_type=="Corporate venue")
+                        {
+                            $banquetbookingmodel->save();
+                            return view('corporate_venue');
+                        }
+                        else
+                        {
+                            return back()->with('fail','Please let us know, What you want to book.');
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /*function banquet_booking_save()
+    {
+        return view('wedding_banquet');
+    }*/
+    function contact()
+    {
+        return view('contact');
+    }
+    function enquire_save(Request $request)
+    {
+        $enquiremodel=new EnquireModel();
+        $enquiremodel->name=$request->name;
+        $enquiremodel->email=$request->email;
+        $enquiremodel->phone_no=$request->phone_no;
+        $enquiremodel->city=$request->city;
+        $enquiremodel->message=$request->message;
+        $date=Carbon::now();
+        $request_date=$date->toDateString();
+        $enquiremodel->request_date=$request_date;
+
+        $save=$enquiremodel->save();
+
+        if($save)
+        {
+            return back()->with('success','Your request hasbeen recived. Try checking your mail for our response.');
+        }
+        else
+        {
+            return back()->with('fail','Something weny wrong. Try again later.');
+        }
     }
 }

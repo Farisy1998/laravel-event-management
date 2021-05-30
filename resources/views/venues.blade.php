@@ -1,6 +1,16 @@
 @extends('theme')
 @section('content')
+<style>
+  .btn-danger{
+      float:right
+  }
+  .btn-primary{
+      float:left
+  }
 
+</style>
+<br>
+&nbsp;<button class="btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft">Enquire Now</button>&nbsp;<button class="btn btn-primary" type="button" >Payment Portal</button>
 <div class="container">
 <br>
 <div class="row">
@@ -10,7 +20,7 @@
     <hr>
     </div>
     <div class="col col-12 col-sm-4 col-md-4 col-lg-4">
-        <center><button class="btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft">Enquire Now</button></center>
+
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasLeftLabel">
   <div class="offcanvas-header">
   <br>
@@ -26,7 +36,7 @@
     <p></p>
       <img src="https://www.vedikadursheti.com/wp-content/uploads/2020/05/New-Indian-Muslim-Wedding-Cover-Pic.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption">
-        <a href="/weddingbooking" class="btn btn-outline-light">Book Now</a>
+        <a href="/banquet_booking" class="btn btn-outline-light">Book Now</a>
       </div>
     </div>
     </div>
@@ -40,7 +50,7 @@
     <p></p>
       <img src="https://cdn.mos.cms.futurecdn.net/6d043f817df5b96f2849fa562bfdb202.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption">
-        <a href="/partybooking" class="btn btn-outline-light">Book Now</a>
+        <a href="/banquet_booking" class="btn btn-outline-light">Book Now</a>
       </div>
     </div>
     </div>
@@ -53,7 +63,7 @@
     <h5>Corporate Venues</h5>
       <img src="https://cfcdn-fc.cbstockreports.com/wp-content/uploads/sites/30/2021/04/default-conference.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption">
-        <a href="/corporatebooking" class="btn btn-outline-light">Book Now</a>
+        <a href="/banquet_booking" class="btn btn-outline-light">Book Now</a>
       </div>
     </div>
     </div>
