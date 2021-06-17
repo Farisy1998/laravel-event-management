@@ -41,4 +41,5 @@ Route::group(['middleware'=>['UserCheck']],function(){
     Route::post('/banquet_booking_save',[MainController::class,'banquet_booking_save'])->name('banquet_booking_save');
     Route::post('/wedding_banquet_save',[MainController::class,'wedding_banquet_save'])->name('wedding_banquet_save');
     Route::post('/party_venue_save',[MainController::class,'party_venue_save'])->name('party_venue_save');
+    Route::get('/party_event',[MainController::class,'party_event'])->name('party_event');
 });

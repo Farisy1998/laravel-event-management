@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Collection;
 use App\Models\RegisterModel;
 use App\Models\PaymentModel;
@@ -15,6 +16,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\AdminModel;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 
 class MainController extends Controller
 {
@@ -314,7 +316,7 @@ class MainController extends Controller
 
         $partyvenuemodel=new PartyVenueModel();
         $partyvenuemodel->username=$data->username;
-        $partyvenuemodel->venue_type=$data->venue_type;
+        $partyvenuemodel->venue_type=$request->venue_type;
 
         $venue_type=$request->venue_type;
         $amt_per_person=0;
@@ -332,9 +334,9 @@ class MainController extends Controller
         }
 
         $partyvenuemodel->amt_per_person=$amt_per_person;
-        $partyvenuemodel->party_type=$data->party_type;
-        $partyvenuemodel->venue_style=$data->venue_style;
-        $partyvenuemodel->part_no=$data->part_no;
+        $partyvenuemodel->party_type=$request->party_type;
+        $partyvenuemodel->venue_style=$request->venue_style;
+        $partyvenuemodel->part_no=$request->part_no;
 
         $save=$partyvenuemodel->save();
 
@@ -432,7 +434,7 @@ class MainController extends Controller
                         if($request->book_type=="Wedding banquet")
                         {
                             $banquetbookingmodel->save();
-                            return redirect('/wedding_banquet');
+                            return view('wedding_banquet');
                         }
                         elseif($request->book_type=="Party venue")
                         {

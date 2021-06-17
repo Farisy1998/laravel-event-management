@@ -7,7 +7,7 @@
         <div class="col col-12 col-sm-6 col-md-6 col-lg-6">
             <br>
             <br>
-            <center><h1>About Party venue</h1></center>
+            <center><h1>About Party Venue</h1></center>
             <hr>
         </div>
         <div class="col col-12 col-sm-3 col-md-3 col-lg-3"></div>
@@ -49,7 +49,7 @@
             </div>
             <p></p>
             <div class="form-group">
-                <select class="form-select" name="banquet_type" aria-label="Default select example" required>
+                <select class="form-select" name="venue_type" aria-label="Default select example" required>
                     <option>Select</option>
                     <option value="Normal">Normal</option>
                     <option value="Standard">Standard</option>
