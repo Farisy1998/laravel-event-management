@@ -46,7 +46,6 @@
             background: #0066ff;
         }
         .container form .btn.btn-success{
-
             transform: translateX(-50%);
             width: 30%;
             height: 40px;
