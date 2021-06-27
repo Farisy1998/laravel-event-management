@@ -71,7 +71,7 @@
         @csrf
         @if(Session::get('success'))
         <div class="alert alert-success">
-            {{{Session::get('success')}}}&nbsp;&nbsp;<a href="/userhome">Go home</a>
+            {{{Session::get('success')}}}&nbsp;&nbsp;<a href="/profile/1">Go to profile</a>
         </div>
         @endif
         @if(Session::get('fail'))
