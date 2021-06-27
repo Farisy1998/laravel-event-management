@@ -106,7 +106,8 @@
                         <input type="password" class="form-control" name="password" placeholder="Enter password">
                         <span class="text-danger">@error('password'){{$message}}  @enderror</span>
                     </div>
-                    <a href="/forgot_password">Forgot password</a>
+                    <p></p>
+                    <h5><a href="/forgot_password">Forgot password</a></h5>
                     <p></p>
                     <br>
                         <button class="btn btn-outline-primary" type="submit">Login</button>
