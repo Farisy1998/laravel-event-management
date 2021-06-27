@@ -93,7 +93,7 @@
         <p></p>
         <div class="form-group">
             <label><h5>New phone no:</h5></label>
-            <input type="text" class="form-control" name="phoneno" placeholder="Enter new phone no:">
+            <input type="text" class="form-control" name="phoneno" placeholder="Enter new phone no:" value="{{$LoggedUserInfo['phoneno']}}">
             <span class="text-danger">@error('phoneno'){{$message}}  @enderror</span>
         </div>
         <br>
