@@ -486,4 +486,8 @@ class MainController extends Controller
             return back()->with('fail','Something weny wrong. Try again later.');
         }
     }
+    function username_change()
+    {
+        return view("username_change");
+    }
 }

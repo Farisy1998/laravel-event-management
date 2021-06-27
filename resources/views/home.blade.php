@@ -161,7 +161,7 @@
 </nav>
 <br>
 <br>
-<center><a href="/about" class="btn btn-outline-primary"><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; More About Us &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5></a></center>
+<center><a href="/about" class="btn btn-outline-primary"><p><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; More About Us &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5></p></a></center>
 <br>
 <br>
 @endsection
