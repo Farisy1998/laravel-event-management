@@ -8,7 +8,7 @@
     background-color: #f1f1f1;
     }
     .profile-card{
-    width: 450px;
+    width: 400px;
     border-radius: 4px;
     margin: auto;
     background: #fff;

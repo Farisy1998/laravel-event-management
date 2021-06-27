@@ -3,13 +3,12 @@
 <head>
     <style>
       body{
-    min-height: 100hv;
     font-family: sans-serif;
     color: #3c3939;
     background-color: #f1f1f1;
     }
     .container{
-    width: 450px;
+    width: 400px;
     border-radius: 4px;
     margin: auto;
     background: #fff;
