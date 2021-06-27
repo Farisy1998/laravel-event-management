@@ -55,10 +55,8 @@
             width: 45%;
             height: 40px;
             border: 0;
-            background: #009933;
             cursor: pointer;
             font-size: 18px;
-            color: white;
             border-radius: 4px;
             transition: .3s;
         }
@@ -174,7 +172,7 @@
                     </div>
                     <p></p>
                     <br>
-                        <button class="btn btn-outline-success" type="submit">Register</button>
+                        <button class="btn btn-success" type="submit">Register</button>
                     <br>
                     <br>
                 </form>

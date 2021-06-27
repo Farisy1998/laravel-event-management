@@ -53,9 +53,12 @@
             border: 0;
             cursor: pointer;
             font-size: 18px;
-            color: white;
             border-radius: 4px;
             transition: .3s;
+        }
+        .container form .btn.btn-success:hover{
+            opacity: .7;
+            background: #009933;
         }
     </style>
 </head>
