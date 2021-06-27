@@ -64,7 +64,7 @@
 <div class="container">
     <br>
     <form action="/update_username">
-        <h2>Change Username</h2>
+        <h2>Edit Profile</h2>
         @csrf
         @if(Session::get('success'))
         <div class="alert alert-success">
@@ -77,15 +77,21 @@
         </div>
         @endif
         <div class="form-group">
-            <label><h5>Old username</h5></label>
-            <input type="text" class="form-control" name="old_username" placeholder="Enter old username" value="">
-            <span class="text-danger">@error('old_username'){{$message}}  @enderror</span>
+            <label><h5>Username</h5></label>
+            <input type="text" class="form-control" name="username" placeholder="Enter new username" value="{{$LoggedUserInfo['username']}}">
+            <span class="text-danger">@error('username'){{$message}}  @enderror</span>
         </div>
         <p></p>
         <div class="form-group">
-            <label><h5>New username</h5></label>
-            <input type="text" class="form-control" name="new_username" placeholder="Enter new username">
-            <span class="text-danger">@error('new_username'){{$message}}  @enderror</span>
+            <label><h5>New email</h5></label>
+            <input type="text" class="form-control" name="email" placeholder="Enter new email" value="{{$LoggedUserInfo['email']}}">
+            <span class="text-danger">@error('email'){{$message}}  @enderror</span>
+        </div>
+        <p></p>
+        <div class="form-group">
+            <label><h5>New phone no:</h5></label>
+            <input type="text" class="form-control" name="phoneno" placeholder="Enter new phone no:">
+            <span class="text-danger">@error('phoneno'){{$message}}  @enderror</span>
         </div>
         <br>
         <a class="btn btn-primary" href="/profile">Cancel</a>&nbsp;&nbsp;&nbsp;<button class="btn btn-success" type="submit">Save</button>

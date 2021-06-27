@@ -488,6 +488,7 @@ class MainController extends Controller
     }
     function edit_profile()
     {
-        return view("edit_profile");
+        $data=['LoggedUserInfo'=>RegisterModel::where('id','=',session('LoggedUser'))->first()];
+        return view("edit_profile", $data);
     }
 }

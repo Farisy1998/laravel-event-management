@@ -102,8 +102,8 @@
                     </div>
                     <p></p>
                     <div class="form-group">
-                        <label><h5>Gender</h5></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="radio"  name="flexRadioDefault" value="Male" class="form-check-input" required> <label><h6>Male</h6></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label><h5>Gender</h5></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio"  name="flexRadioDefault" value="Male" class="form-check-input" required> <label><h6>Male</h6></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="radio"  name="flexRadioDefault" value="Female" class="form-check-input" required> <label><h6>Female</h6></label>
                     </div>
                     <p></p>
