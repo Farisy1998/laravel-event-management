@@ -50,9 +50,9 @@
             padding: 0 10px;
         }
         .container form .btn{
-            margin: 8%;
-            transform: translateX(-20%);
-            width: 30%;
+            margin-left: 50%;
+            transform: translateX(-55%);
+            width: 45%;
             height: 40px;
             border: 0;
             background: #0066ff;
@@ -106,10 +106,11 @@
                         <input type="password" class="form-control" name="password" placeholder="Enter password">
                         <span class="text-danger">@error('password'){{$message}}  @enderror</span>
                     </div>
+                    <a href="/forgot_password">Forgot password</a>
                     <p></p>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="/forgot_password">Forgot password</a>
+                    <br>
                         <button class="btn btn-outline-primary" type="submit">Login</button>
+                        <br>
                         <br>
                         <!--<a href="/admin_reg">Admin Registration</a>-->
                 </form>
