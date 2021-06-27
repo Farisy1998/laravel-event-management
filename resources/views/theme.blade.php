@@ -55,7 +55,7 @@
             <h5><font color="white">My Account</font></h5>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/profile">Profile</a></li>
+            <li><a class="dropdown-item" href="/profile/1">Profile</a></li>
             <li><a class="dropdown-item" href="/logout">Logout</a></li>
           </ul>
         </li>

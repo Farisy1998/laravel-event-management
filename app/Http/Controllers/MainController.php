@@ -165,8 +165,8 @@ class MainController extends Controller
     }
     function profile()
     {
-        $data=['LoggedUserInfo'=>RegisterModel::where('id','=',session('LoggedUser'))->first()];
-        return view('profile', $data);
+        $data=RegisterModel::where('id','=',session('LoggedUser'))->first();
+        return view('profile', compact('data'));
     }
     function photography()
     {
@@ -486,9 +486,46 @@ class MainController extends Controller
             return back()->with('fail','Something weny wrong. Try again later.');
         }
     }
-    function edit_profile()
+    function edit_profile($id)
     {
-        $data=['LoggedUserInfo'=>RegisterModel::where('id','=',session('LoggedUser'))->first()];
-        return view("edit_profile", $data);
+        $data=RegisterModel::find($id);
+        return view("edit_profile",compact('data'));
+    }
+    function update_profile(Request $request, $id)
+    {
+        $request->validate([
+            'username'=>'required',
+            'email'=>'required|email',
+            'phoneno'=>'required'
+        ]);
+        $data=RegisterModel::find($id);
+        if(($request->username==$data->username)&&($request->email==$data->email)&&($request->phoneno==$data->phoneno))
+        {
+            return back()->with('fail','Nothing to save.');
+        }
+        else{
+            return back()->with('success','successfully updated');
+        }
+    }
+    function change_password($id)
+    {
+        $data=RegisterModel::find($id);
+        return view("change_password",compact('data'));
+    }
+    function update_password(Request $request, $id)
+    {
+        $request->validate([
+            'password'=>'required',
+            'confirm_password'=>'required',
+        ]);
+        $data=RegisterModel::find($id);
+        if(!Hash::check($request->password, $data->password))
+        {
+            return back()->with('fail',"Passwords isn't matches.");
+        }
+        else
+        {
+            return back()->with('success','successfully updated');
+        }
     }
 }

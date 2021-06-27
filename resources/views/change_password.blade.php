@@ -66,8 +66,8 @@
 <br>
 <div class="container">
     <br>
-    <form action="/update_profile/{{$data->id}}" method="post">
-        <h2>Edit Profile</h2>
+    <form action="/update_password/{{$data->id}}">
+        <h2>Change Password</h2>
         @csrf
         @if(Session::get('success'))
         <div class="alert alert-success">
@@ -80,21 +80,15 @@
         </div>
         @endif
         <div class="form-group">
-            <label><h5>Username</h5></label>
-            <input type="text" class="form-control" name="username" placeholder="Enter new username" value="{{$data->username}}" >
-            <span class="text-danger">@error('username'){{$message}}  @enderror</span>
+            <label><h5>New password</h5></label>
+            <input type="password" class="form-control" name="password" placeholder="Enter new password">
+            <span class="text-danger">@error('password'){{$message}}  @enderror</span>
         </div>
         <p></p>
         <div class="form-group">
-            <label><h5>New email</h5></label>
-            <input type="text" class="form-control" name="email" placeholder="Enter new email" value="{{$data->email}}">
-            <span class="text-danger">@error('email'){{$message}}  @enderror</span>
-        </div>
-        <p></p>
-        <div class="form-group">
-            <label><h5>New phone no:</h5></label>
-            <input type="text" class="form-control" name="phoneno" placeholder="Enter new phone no:" value="{{$data->phoneno}}">
-            <span class="text-danger">@error('phoneno'){{$message}}  @enderror</span>
+            <label><h5>Confirm password</h5></label>
+            <input type="password" class="form-control" name="confirm_password" placeholder="Re-enter new password">
+            <span class="text-danger">@error('confirm_password'){{$message}}  @enderror</span>
         </div>
         <br>
         <a class="btn btn-primary" href="/profile/{{$data->id}}">Cancel</a>&nbsp;&nbsp;&nbsp;<button class="btn btn-success" type="submit">Save</button>

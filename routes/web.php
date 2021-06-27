@@ -26,8 +26,11 @@ Route::get('/register',[MainController::class,'register'])->name('register');
 Route::group(['middleware'=>['UserCheck']],function(){
     Route::get('/',[MainController::class,'login'])->name('login');
     Route::get('/userhome',[MainController::class,'home'])->name('userhome');
-    Route::get('/profile',[MainController::class,'profile'])->name('profile');
-    Route::get('/edit_profile',[MainController::class,'edit_profile'])->name('edit_profile');
+    Route::get('/profile/{id}',[MainController::class,'profile'])->name('profile');
+    Route::get('/edit_profile/{id}',[MainController::class,'edit_profile'])->name('edit_profile');
+    Route::post('/update_profile/{id}',[MainController::class,'update_profile'])->name('update_profile');
+    Route::get('/change_password/{id}',[MainController::class,'change_password'])->name('change_password');
+    Route::get('/update_password/{id}',[MainController::class,'update_password'])->name('update_password');
     Route::get('/about',[MainController::class,'about'])->name('about');
     Route::get('/contact',[MainController::class,'contact'])->name('contact');
     Route::post('/enquire_save',[MainController::class,'enquire_save'])->name('enquire_save');
