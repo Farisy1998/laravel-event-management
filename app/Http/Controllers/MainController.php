@@ -59,8 +59,8 @@ class MainController extends Controller
             'district'=>'required',
             'email'=>'required|email|unique:register_models',
             'username'=>'required|unique:register_models',
-            'password'=>'required|min:4|max:5',
-            'confirm_password'=>'required|min:4|max:5'
+            'password'=>'required|min:4|max:15',
+            'confirm_password'=>'required|min:4|max:15'
         ]);
 
         $check_password=$request->password;
@@ -504,7 +504,13 @@ class MainController extends Controller
             return back()->with('fail','Nothing to save.');
         }
         else{
-            return back()->with('success','successfully updated');
+            $data->username=$request->username;
+            $data->email=$request->email;
+            $data->phoneno=$request->phoneno;
+
+            $data->save();
+
+            return back()->with('success','Successfully updated');
         }
     }
     function change_password($id)
@@ -515,17 +521,21 @@ class MainController extends Controller
     function update_password(Request $request, $id)
     {
         $request->validate([
-            'password'=>'required',
-            'confirm_password'=>'required',
+            'password'=>'required|min:4|max:15',
+            'confirm_password'=>'required|min:4|max:15'
         ]);
         $data=RegisterModel::find($id);
-        if(!Hash::check($request->password, $data->password))
+        if($request->password!=$request->confirm_password)
         {
             return back()->with('fail',"Passwords isn't matches.");
         }
         else
         {
-            return back()->with('success','successfully updated');
+            $data->password=Hash::make($request->password);
+
+            $data->save();
+            
+            return back()->with('success','Password successfully updated');
         }
     }
 }
