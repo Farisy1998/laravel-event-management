@@ -86,13 +86,13 @@
         </div>
         <p></p>
         <div class="form-group">
-            <label><h5>New email</h5></label>
+            <label><h5>Email</h5></label>
             <input type="text" class="form-control" name="email" placeholder="Enter new email" value="{{$data->email}}">
             <span class="text-danger">@error('email'){{$message}}  @enderror</span>
         </div>
         <p></p>
         <div class="form-group">
-            <label><h5>New phone no:</h5></label>
+            <label><h5>Phone no:</h5></label>
             <input type="text" class="form-control" name="phoneno" placeholder="Enter new phone no:" value="{{$data->phoneno}}">
             <span class="text-danger">@error('phoneno'){{$message}}  @enderror</span>
         </div>
