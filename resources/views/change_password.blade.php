@@ -65,7 +65,7 @@
 <div class="container">
     <br>
     <form action="/update_password/{{$data->id}}">
-        <h2>Change Password</h2>
+        <h2>Change Your Password</h2>
         @csrf
         @if(Session::get('success'))
         <div class="alert alert-success">

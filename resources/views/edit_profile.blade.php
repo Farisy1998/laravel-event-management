@@ -66,7 +66,7 @@
 <div class="container">
     <br>
     <form action="/update_profile/{{$data->id}}" method="post">
-        <h2>Edit Profile</h2>
+        <h2>Edit Your Profile</h2>
         @csrf
         @if(Session::get('success'))
         <div class="alert alert-success">
