@@ -143,7 +143,7 @@ class MainController extends Controller
         }
         else
         {
-            return back()->with('fail','Select a account type.');
+            return back()->with('fail','Select an account type.');
         }
     }
     function logout()
