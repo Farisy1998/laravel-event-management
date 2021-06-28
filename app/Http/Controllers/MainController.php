@@ -168,9 +168,9 @@ class MainController extends Controller
         $data=RegisterModel::where('id','=',session('LoggedUser'))->first();
         return view('profile', compact('data'));
     }
-    function photography()
+    function photoshoot()
     {
-        return view('photography');
+        return view('photoshoot');
     }
     function makeup()
     {
