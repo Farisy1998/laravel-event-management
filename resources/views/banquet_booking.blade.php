@@ -84,7 +84,7 @@
             <div class="form-group">
                 <label><h6>Venue / Banquet location</h6></label>
                 <select class="form-select" name="location" aria-label="Default select example" required>
-                    <option value="Select">Select</option>
+                    <option disabled selected>Select</option>
                     <option value="Trivandrum">Trivandrum</option>
                     <option value="Calicut">Calicut</option>
                     <option value="Cochin">Cochin</option>
