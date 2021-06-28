@@ -17,7 +17,9 @@ use App\Http\Controllers\MainController;
 
 Route::post('/registersave',[MainController::class,'save'])->name('registersave');
 Route::post('/logincheck',[MainController::class,'check'])->name('logincheck');
-Route::get('/enter_email',[MainController::class,'enter_email'])->name('enter_email');
+Route::get('/verify_email',[MainController::class,'verify_email'])->name('verify_email');
+Route::get('/emailcheck',[MainController::class,'emailcheck'])->name('emailcheck');
+Route::post('/update_mpassword/{email}',[MainController::class,'update_mpassword'])->name('update_mpassword');
 Route::get('/logout',[MainController::class,'logout'])->name('logout');
 Route::get('/admin_reg',[MainController::class,'admin_reg'])->name('admin_reg');
 Route::post('/admin_save',[MainController::class,'admin_save'])->name('admin_save');

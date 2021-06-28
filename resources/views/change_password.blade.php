@@ -28,22 +28,21 @@
             margin: 10px 0 10px 0;
             padding: 0 10px;
     }
-    .container form .btn.btn-primary{
+    .container form .btn.btn-danger{
             margin-left: 25%;
             transform: translateX(-50%);
             width: 30%;
             height: 40px;
             border: 0;
-            background: #0066ff;
             cursor: pointer;
             font-size: 18px;
             color: white;
             border-radius: 4px;
             transition: .3s;
         }
-        .container form .btn.btn-primary:hover{
+        .container form .btn.btn-danger:hover{
             opacity: .7;
-            background: #0066ff;
+            background: #ff3333;
         }
         .container form .btn.btn-success{
             transform: translateX(-50%);
@@ -90,7 +89,7 @@
             <span class="text-danger">@error('confirm_password'){{$message}}  @enderror</span>
         </div>
         <br>
-        <a class="btn btn-primary" href="/profile/{{$data->id}}">Cancel</a>&nbsp;&nbsp;&nbsp;<button class="btn btn-success" type="submit">Save</button>
+        <a class="btn btn-danger" href="/profile/{{$data->id}}">Cancel</a>&nbsp;&nbsp;&nbsp;<button class="btn btn-success" type="submit">Save</button>
         <br>
         <br>
     </form>

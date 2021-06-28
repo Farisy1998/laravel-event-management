@@ -538,8 +538,43 @@ class MainController extends Controller
             return back()->with('success','Password successfully updated');
         }
     }
-    function enter_email(Request $request)
+    function verify_email(Request $request)
     {
-        return view('enter_email');
+        return view('verify_email');
+    }
+    function emailcheck(Request $request)
+    {
+        $request->validate([
+            'email'=>'required|email'
+        ]);
+        $data=RegisterModel::where('email','=',$request->email)->first();
+        if(!$data)
+        {
+            return back()->with('fail','Email not found');
+        }
+        else
+        {
+            return view('change_mpassword', compact('data'));
+        }
+    }
+    function update_mpassword(Request $request, $email)
+    {
+        $request->validate([
+            'password'=>'required|min:4|max:15',
+            'confirm_password'=>'required|min:4|max:15'
+        ]);
+        $data=RegisterModel::where('email','=',$email)->first();
+        if($request->password!=$request->confirm_password)
+        {
+            return back()->with('fail',"Passwords isn't matches.");
+        }
+        else
+        {
+            $data->password=Hash::make($request->password);
+
+            $data->save();
+
+            return redirect('/');
+        }
     }
 }

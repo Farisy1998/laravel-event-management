@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In | Presentup</title>
+    <title>Change Password | Presentup</title>
     <style>
         *{
             margin: 0;
@@ -49,10 +49,9 @@
             margin: 10px 0 10px 0;
             padding: 0 10px;
         }
-        .container form .btn{
-            margin-left: 50%;
-            transform: translateX(-55%);
-            width: 45%;
+        .container form .btn-primary{
+            transform: translateX(70%);
+            width: 30%;
             height: 40px;
             border: 0;
             background: #0066ff;
@@ -62,9 +61,24 @@
             border-radius: 4px;
             transition: .3s;
         }
-        .container form .btn:hover{
+        .container form .btn-primary:hover{
             opacity: .7;
             background: #0066ff;
+        }
+        .container form .btn-danger{
+            transform: translateX(55%);
+            width: 30%;
+            height: 40px;
+            border: 0;
+            cursor: pointer;
+            font-size: 18px;
+            color: white;
+            border-radius: 4px;
+            transition: .3s;
+        }
+        .container form .btn-danger:hover{
+            opacity: .7;
+            background: #ff3333;
         }
     </style>
 </head>
@@ -74,11 +88,11 @@
             <br>
             <center><font color="white"><h1>Presentup Event Team</h1></font></center>
             <br>
-                <form action="/logincheck" method="post">
-                <h2>Sign In</h2>
+                <form action="/update_mpassword/{{$data->email}}" method="post">
+                <h2>Change Your Password</h2>
                 @csrf
                     <div class="alert alert-warning" role="alert">
-                        I don't have an account&nbsp;&nbsp;<a href="/register">Sign Up</a>
+                        Note: This password is going to be the new password for your Presentup account.
                     </div>
                     <br>
                     @if(Session::get('fail'))
@@ -87,33 +101,20 @@
                     </div>
                     @endif
                     <div class="form-group">
-                        <select class="form-select" name="acctype" aria-label="Default select example" required>
-                            <option selected>Account type</option>
-                            <option value="Admin">Admin</option>
-                            <option value="User">User</option>
-                        </select>
-                        <span class="text-danger">@error('acctype'){{$message}}  @enderror</span>
-                    </div>
-                    <p></p>
-                    <div class="form-group">
-                        <label><h5>Username</h5></label>
-                        <input type="text" class="form-control" name="username" placeholder="Enter username" value="{{old('username')}}">
-                        <span class="text-danger">@error('username'){{$message}}  @enderror</span>
-                    </div>
-                    <p></p>
-                    <div class="form-group">
-                        <label><h5>Password</h5></label>
-                        <input type="password" class="form-control" name="password" placeholder="Enter password">
+                        <label><h5>New password</h5></label>
+                        <input type="password" class="form-control" name="password" placeholder="Enter new password">
                         <span class="text-danger">@error('password'){{$message}}  @enderror</span>
                     </div>
                     <p></p>
-                    <h5><a href="/verify_email">Forgot password</a></h5>
-                    <p></p>
+                    <div class="form-group">
+                        <label><h5>Confirm password</h5></label>
+                        <input type="password" class="form-control" name="confirm_password" placeholder="Re-enter new password">
+                        <span class="text-danger">@error('confirm_password'){{$message}}  @enderror</span>
+                    </div>
                     <br>
-                        <button class="btn btn-outline-primary" type="submit">Login</button>
+                        <a class="btn btn-danger" href="/">Cancel</a>&nbsp;<button class="btn btn-primary" type="submit">Next</button>
                         <br>
                         <br>
-                        <!--<a href="/admin_reg">Admin Registration</a>-->
                 </form>
                 <br>
                 <br>
