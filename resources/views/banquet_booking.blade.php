@@ -55,7 +55,7 @@
             <div class="form-group">
                 <label><h6>What you want to book</h6></label>
                 <select name="book_type" class="form-select" required>
-                    <option>Select</option>
+                    <option disabled selected>Select</option>
                     <option value="Wedding banquet">Wedding banquet</option>
                     <option value="Party venue">Party venue</option>
                     <option value="Corporate venue">Corporate venue</option>

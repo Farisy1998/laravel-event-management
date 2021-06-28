@@ -50,7 +50,7 @@
             <div class="form-group">
                 <label><h6>Vegitarian</h6></label>
                 <select class="form-select" name="veg" aria-label="Default select example" required>
-                    <option>Select</option>
+                    <option disabled selected>Select</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
@@ -59,7 +59,7 @@
             <div class="form-group">
                 <label><h6>Non - Vegitarian</h6></label>
                 <select class="form-select" name="non_veg" aria-label="Default select example" required>
-                <option>Select</option>
+                <option disabled selected>Select</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
@@ -68,7 +68,7 @@
             <div class="form-group">
                 <label><h6>Vegitarian + IMFL (Indian Made Foreign Liquor</h6></label>
                 <select class="form-select" name="veg_imfl" aria-label="Default select example" required>
-                    <option>Select</option>
+                    <option disabled selected>Select</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
@@ -77,7 +77,7 @@
             <div class="form-group">
                 <label><h6>Non - Vegitarian + IMFL (Indian Made Foreign Liquor)</h6></label>
                 <select class="form-select" name="non_veg_imfl" aria-label="Default select example" required>
-                    <option>Select</option>>
+                    <option disabled selected>Select</option>>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
@@ -86,7 +86,7 @@
             <div class="form-group">
                 <label><h6>External liquor</h6></label>
                 <select class="form-select" name="ex_liquor" aria-label="Default select example" required>
-                    <option>Select</option>
+                    <option disabled selected>Select</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
@@ -95,7 +95,7 @@
             <div class="form-group">
                 <label><h6>External cool drinks</h6></label>
                 <select class="form-select" name="ex_cool_drinks" aria-label="Default select example" required>
-                    <option>Select</option>
+                    <option disabled selected>Select</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
@@ -105,7 +105,7 @@
             <div class="form-group">
                 <label><h6>Audio and visual</h6></label>
                 <select class="form-select" name="audio_visual" aria-label="Default select example" required>
-                    <option>Select</option>
+                    <option disabled selected>Select</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
@@ -114,7 +114,7 @@
             <div class="form-group">
                 <label><h6>Live casting</h6></label>
                 <select class="form-select" name="live_casting" aria-label="Default select example" required>
-                    <option>Select</option>
+                    <option disabled selected>Select</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
