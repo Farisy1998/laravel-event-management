@@ -534,8 +534,12 @@ class MainController extends Controller
             $data->password=Hash::make($request->password);
 
             $data->save();
-            
+
             return back()->with('success','Password successfully updated');
         }
+    }
+    function enter_email(Request $request)
+    {
+        return view('enter_email');
     }
 }

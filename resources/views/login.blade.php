@@ -107,7 +107,7 @@
                         <span class="text-danger">@error('password'){{$message}}  @enderror</span>
                     </div>
                     <p></p>
-                    <h5><a href="/forgot_password">Forgot password</a></h5>
+                    <h5><a href="/enter_email">Forgot password</a></h5>
                     <p></p>
                     <br>
                         <button class="btn btn-outline-primary" type="submit">Login</button>

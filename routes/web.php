@@ -17,6 +17,7 @@ use App\Http\Controllers\MainController;
 
 Route::post('/registersave',[MainController::class,'save'])->name('registersave');
 Route::post('/logincheck',[MainController::class,'check'])->name('logincheck');
+Route::get('/enter_email',[MainController::class,'enter_email'])->name('enter_email');
 Route::get('/logout',[MainController::class,'logout'])->name('logout');
 Route::get('/admin_reg',[MainController::class,'admin_reg'])->name('admin_reg');
 Route::post('/admin_save',[MainController::class,'admin_save'])->name('admin_save');
