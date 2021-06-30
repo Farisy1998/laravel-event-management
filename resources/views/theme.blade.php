@@ -61,7 +61,7 @@
         </li>
       </ul>
       <form class="d-flex" action="/search" method="get">
-        <input name="search_data" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" required>
+        <input name="search_data" class="form-control me-2" type="search" placeholder="Search for page" aria-label="Search" required>
         <button class="btn btn-danger" type="submit">Search</button>
       </form>
     </div>

@@ -1,7 +1,6 @@
 @extends('theme')
 @section('content')
-<head>
-    <style>
+<style>
       body{
     font-family: sans-serif;
     color: #3c3939;
@@ -17,30 +16,30 @@
     .image-container{
     position: relative;
     }
-    .btn.btn-danger{
-        float: right;
-    }
     .font{
         font-size:100%;
     }
     .h4{
         padding:2%;
     }
+    .profile_edit{
+      float:right;
+    }
     .main-container{
         padding: 5%;
     }
-    </style>
-</head>
+</style>
+
 <br>
 <br>
 <div class="profile-card">
     <div class="image-conainer">
         <img src="https://us.123rf.com/450wm/zeffir/zeffir1609/zeffir160900087/64033951-tropical-flowers-jungle-leaves-bird-of-paradise-flower-beautiful-seamless-vector-floral-pattern-back.jpg?ver=6" style="width: 100%" alt="...">
         <div class="title">
-        <h4 class="h4">{{$data->fname}} {{$data->lname}}&nbsp;&nbsp;&nbsp;<a href="/edit_profile/{{$data->id}}"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+        <h4 class="h4">{{$data->fname}} {{$data->lname}}<a class="profile_edit" href="/edit_profile/{{$data->id}}"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
   <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
   <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-</svg></a><a class="btn btn-danger" href="/logout">Logout</a></h4>
+</svg></a></h4>
         </div>
     </div>
     <div class="main-container">
@@ -70,5 +69,4 @@
 </div>
 <br>
 <br>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 @endsection

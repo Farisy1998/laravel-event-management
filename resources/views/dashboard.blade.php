@@ -18,7 +18,7 @@
             <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
   <div class="card-header"><h4>Users</h4></div>
   <div class="card-body">
-    <h5 class="card-title">Registered users and messages</h5>
+    <h5 class="card-title">Registered users and feedbacks</h5>
     <br>
     <button class="btn btn-outline-light">Show</button>
   </div>
@@ -36,7 +36,7 @@
   </div>
 </div>
         </div>
-        
+
     </div>
 </div>
 
