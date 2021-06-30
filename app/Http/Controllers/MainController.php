@@ -583,7 +583,7 @@ class MainController extends Controller
         {
             return view('home');
         }
-        elseif(($request->search_data=="Venues")||($request->search_data=="venues"))
+        elseif(($request->search_data=="Venues")||($request->search_data=="venues")||($request->search_data=="Banquets")||($request->search_data=="banquets"))
         {
             return view('venues');
         }
@@ -620,6 +620,12 @@ class MainController extends Controller
         elseif(($request->search_data=="Contact")||($request->search_data=="contact")||($request->search_data=="Enquire")||($request->search_data=="enquire")||($request->search_data=="Feedback")||($request->search_data=="feedback"))
         {
             return view('contact');
+        }
+        elseif(($request->search_data=="Booking")||($request->search_data=="booking")||($request->search_data=="Venue booking")||($request->search_data=="venue booking")||($request->search_data=="Banquet booking")||($request->search_data=="banquet booking"))
+        {
+            $data=['LoggedUserInfo'=>RegisterModel::where('id','=',session('LoggedUser'))->first()];
+
+            return view('banquet_booking', $data);
         }
         else
         {
