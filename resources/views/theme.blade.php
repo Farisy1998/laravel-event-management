@@ -38,7 +38,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="/venues">Venues</a></li>
-            <li><a class="dropdown-item" href="/photography">Photography</a></li>
+            <li><a class="dropdown-item" href="/photoshoot">photoshoot</a></li>
             <li><a class="dropdown-item" href="/makeup">Makeup</a></li>
             <li><a class="dropdown-item" href="/mehendi">Mehendi</a></li>
             <li><a class="dropdown-item" href="/decorations">Decorations</a></li>
@@ -60,8 +60,8 @@
           </ul>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <form class="d-flex" action="/search" method="get">
+        <input name="search_data" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" required>
         <button class="btn btn-danger" type="submit">Search</button>
       </form>
     </div>

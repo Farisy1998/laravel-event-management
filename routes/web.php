@@ -34,6 +34,7 @@ Route::group(['middleware'=>['UserCheck']],function(){
     Route::post('/update_profile/{id}',[MainController::class,'update_profile'])->name('update_profile');
     Route::get('/change_password/{id}',[MainController::class,'change_password'])->name('change_password');
     Route::get('/update_password/{id}',[MainController::class,'update_password'])->name('update_password');
+    Route::get('/search',[MainController::class,'search'])->name('search');
     Route::get('/about',[MainController::class,'about'])->name('about');
     Route::get('/contact',[MainController::class,'contact'])->name('contact');
     Route::post('/enquire_save',[MainController::class,'enquire_save'])->name('enquire_save');

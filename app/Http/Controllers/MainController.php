@@ -577,4 +577,53 @@ class MainController extends Controller
             return redirect('/');
         }
     }
+    function search(Request $request)
+    {
+        if(($request->search_data=="Home")||($request->search_data=="home"))
+        {
+            return view('home');
+        }
+        elseif(($request->search_data=="Venues")||($request->search_data=="venues"))
+        {
+            return view('venues');
+        }
+        elseif(($request->search_data=="Photoshoot")||($request->search_data=="photoshoot"))
+        {
+            return view('photoshoot');
+        }
+        elseif(($request->search_data=="Makeup")||($request->search_data=="makeup"))
+        {
+            return view('makeup');
+        }
+        elseif(($request->search_data=="Mehendi")||($request->search_data=="mehendi"))
+        {
+            return view('mehendi');
+        }
+        elseif(($request->search_data=="Decorations")||($request->search_data=="decorations"))
+        {
+            return view('decorations');
+        }
+        elseif(($request->search_data=="About")||($request->search_data=="about"))
+        {
+            return view('about');
+        }
+        elseif(($request->search_data=="My account")||($request->search_data=="my account")||($request->search_data=="Account")||($request->search_data=="account"))
+        {
+            $data=RegisterModel::where('id','=',session('LoggedUser'))->first();
+            return view('profile', compact('data'));
+        }
+        elseif(($request->search_data=="Profile")||($request->search_data=="profile"))
+        {
+            $data=RegisterModel::where('id','=',session('LoggedUser'))->first();
+            return view('profile', compact('data'));
+        }
+        elseif(($request->search_data=="Contact")||($request->search_data=="contact")||($request->search_data=="Enquire")||($request->search_data=="enquire")||($request->search_data=="Feedback")||($request->search_data=="feedback"))
+        {
+            return view('contact');
+        }
+        else
+        {
+            return view('404notfound');
+        }
+    }
 }
