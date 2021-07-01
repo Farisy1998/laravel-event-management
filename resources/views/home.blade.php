@@ -5,7 +5,7 @@
     <div class="carousel-item active">
       <img src="https://i.pinimg.com/originals/05/64/a4/0564a44686c0ecdf562cd472a25b3cd3.jpg" height="500px" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h2>Find Your Ideal Vendors At Best Prices</h2>
+        <h2>Find Your Ideal Vendors At Best Price</h2>
         <h1>⟱</h1>
       </div>
     </div>
