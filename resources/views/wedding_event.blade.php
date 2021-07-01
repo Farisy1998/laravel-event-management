@@ -66,7 +66,7 @@
             </div>
             <p></p>
             <div class="form-group">
-                <label><h6>Vegitarian + IMFL (Indian Made Foreign Liquor</h6></label>
+                <label><h6>Vegitarian + IMFL (Indian Made Foreign Liquor)</h6></label>
                 <select class="form-select" name="veg_imfl" aria-label="Default select example" required>
                     <option disabled selected>Select</option>
                     <option value="Yes">Yes</option>
