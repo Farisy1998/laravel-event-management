@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presentup</title>
+    <link rel = "icon" href ="https://www.snapshot-booths.com/wp-content/uploads/2018/10/cropped-favicon-logo.png" type = "imagex-icon">
     <style>
       .btn-primary:hover{
         opacity: .7;
@@ -52,9 +53,10 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <h5><font color="white">My Account</font></h5>
+            <h5><font color="white">Account</font></h5>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="/mybooking/1">My Bookings</a></li>
             <li><a class="dropdown-item" href="/profile/1">Profile</a></li>
             <li><a class="dropdown-item" href="/logout">Logout</a></li>
           </ul>

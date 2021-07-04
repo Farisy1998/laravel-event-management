@@ -28,23 +28,23 @@
             <br>
             <div class="form-group">
                 <label><h6>First name</h6></label>
-                <input type="text" name="fname" placeholder="Enter requester's first name" class="form-control" value="{{$LoggedUserInfo['fname']}}">
+                <input type="text" name="fname" placeholder="Enter requester's first name" class="form-control" value="{{$LoggedUserInfo['fname']}}" required>
             </div>
             <p></p>
             <div class="form-group">
                 <label><h6>Last name</h6></label>
-                <input type="text" name="lname" placeholder="Enter requester's last name" class="form-control" value="{{$LoggedUserInfo['lname']}}">
+                <input type="text" name="lname" placeholder="Enter requester's last name" class="form-control" value="{{$LoggedUserInfo['lname']}}" required>
             </div>
             <p></p>
             <div class="form-group">
                 <label><h6>Email</h6></label>
-                <input type="text" name="email" placeholder="Enter requester's email" class="form-control" value="{{$LoggedUserInfo['email']}}">
+                <input type="text" name="email" placeholder="Enter requester's email" class="form-control" value="{{$LoggedUserInfo['email']}}" required>
                 <span class="text-danger">@error('email'){{$message}} @enderror</span>
             </div>
             <p></p>
             <div class="form-group">
                 <label><h6>Mobile no:</h6></label>
-                <input type="text" name="mob" placeholder="Enter requester's mobile no:" class="form-control" value="{{$LoggedUserInfo['phoneno']}}">
+                <input type="text" name="mob" placeholder="Enter requester's mobile no:" class="form-control" value="{{$LoggedUserInfo['phoneno']}}" required>
             </div>
             <p></p>
             <div class="form-group">
@@ -55,7 +55,7 @@
             <div class="form-group">
                 <label><h6>What you want to book</h6></label>
                 <select name="book_type" class="form-select" required>
-                    <option disabled selected>Select</option>
+                    <option value="">Select</option>
                     <option value="Wedding banquet">Wedding banquet</option>
                     <option value="Party venue">Party venue</option>
                     <option value="Corporate venue">Corporate venue</option>
@@ -83,17 +83,7 @@
             <br>
             <div class="form-group">
                 <label><h6>Venue / Banquet location</h6></label>
-                <select class="form-select" name="location" aria-label="Default select example" required>
-                    <option disabled selected>Select</option>
-                    <option value="Trivandrum">Trivandrum</option>
-                    <option value="Calicut">Calicut</option>
-                    <option value="Cochin">Cochin</option>
-                    <option value="Munnar">Munnar</option>
-                    <option value="Kannur">Kannur</option>
-                    <option value="Wayanad">Wayanad</option>
-                    <option value="Aalappuzha">Aalappuzha</option>
-                    <option value="Pathanamthitta">Pathanamthitta</option>
-                </select>
+                <input type="text" name="location" class="form-control" value="<?php echo htmlspecialchars($_GET['ref']); ?>" required>
                 <span class="text-danger">@error('location'){{$message}} @enderror</span>
             </div>
             <br>

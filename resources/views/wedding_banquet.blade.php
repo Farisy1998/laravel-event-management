@@ -50,7 +50,7 @@
             <p></p>
             <div class="form-group">
                 <select class="form-select" name="banquet_type" aria-label="Default select example" required>
-                    <option disabled selected>Select</option>
+                    <option value="">Select</option>
                     <option value="Normal">Normal</option>
                     <option value="Standard">Standard</option>
                     <option value="VIP">VIP</option>
@@ -61,7 +61,7 @@
             <div class="form-group">
                 <label><h6>Banquet Style</h6></label>
                 <select class="form-select" name="banquet_style" aria-label="Default select example" required>
-                    <option disabled selected>Select</option>
+                    <option Value="">Select</option>
                     <option value="Theatre Style">Theatre Style</option>
                     <option value="Boardroom Style">Boardroom Style</option>
                     <option value="U-shape Style">U-shape Style</option>

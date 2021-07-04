@@ -26,20 +26,18 @@
         <form action="/wedding_event_save" method="post">
         @csrf
         <br>
+        <div class="form-group">
+            <label><h4><u>Wedding:</u></h4></label>
+        </div>
+        <p></p>
             <div class="form-group">
-                <label><h6>Wedding starts</h6></label>
-                <input type="date" name="start_date" class="form-control" required>
-                <span class="text-danger">@error('start_date'){{$message}} @enderror</span>
-                <p></p>
+                <label><h6>Starts at</h6></label>
                 <input type="time" name="start_time" class="form-control" placeholder="" required>
-            </div>
-            <br>
-            <div class="form-group">
-                <label><h6>Wedding ends</h6></label>
-                <input type="date" name="end_date" class="form-control" required>
-                <span class="text-danger">@error('end_date'){{$message}} @enderror</span>
+                <span class="text-danger">@error('start_time'){{$message}} @enderror</span>
                 <p></p>
+                <label><h6>Ends at</h6></label>
                 <input type="time" name="end_time" class="form-control" required>
+                <span class="text-danger">@error('end_time'){{$message}} @enderror</span>
             </div>
             <br>
             <br>
@@ -50,74 +48,82 @@
             <div class="form-group">
                 <label><h6>Vegitarian</h6></label>
                 <select class="form-select" name="veg" aria-label="Default select example" required>
-                    <option disabled selected>Select</option>
+                    <option value="">Select</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
+                <span class="text-danger">@error('veg'){{$message}} @enderror</span>
             </div>
             <p></p>
             <div class="form-group">
                 <label><h6>Non - Vegitarian</h6></label>
                 <select class="form-select" name="non_veg" aria-label="Default select example" required>
-                <option disabled selected>Select</option>
+                    <option value="">Select</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
+                <span class="text-danger">@error('non_veg'){{$message}} @enderror</span>
             </div>
             <p></p>
             <div class="form-group">
                 <label><h6>Vegitarian + IMFL (Indian Made Foreign Liquor)</h6></label>
                 <select class="form-select" name="veg_imfl" aria-label="Default select example" required>
-                    <option disabled selected>Select</option>
+                    <option value="">Select</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
+                <span class="text-danger">@error('veg_imfl'){{$message}} @enderror</span>
             </div>
             <p></p>
             <div class="form-group">
                 <label><h6>Non - Vegitarian + IMFL (Indian Made Foreign Liquor)</h6></label>
                 <select class="form-select" name="non_veg_imfl" aria-label="Default select example" required>
-                    <option disabled selected>Select</option>>
+                    <option value="">Select</option>>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
+                <span class="text-danger">@error('non_veg_imfl'){{$message}} @enderror</span>
             </div>
             <p></p>
             <div class="form-group">
                 <label><h6>External liquor</h6></label>
                 <select class="form-select" name="ex_liquor" aria-label="Default select example" required>
-                    <option disabled selected>Select</option>
+                    <option value="">Select</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
+                <span class="text-danger">@error('ex_liqior'){{$message}} @enderror</span>
             </div>
             <p></p>
             <div class="form-group">
                 <label><h6>External cool drinks</h6></label>
                 <select class="form-select" name="ex_cool_drinks" aria-label="Default select example" required>
-                    <option disabled selected>Select</option>
+                    <option value="">Select</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
+                <span class="text-danger">@error('ex_cool_drinks'){{$message}} @enderror</span>
             </div>
             <br>
             <br>
             <div class="form-group">
                 <label><h6>Audio and visual</h6></label>
                 <select class="form-select" name="audio_visual" aria-label="Default select example" required>
-                    <option disabled selected>Select</option>
+                    <option value="">Select</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
+                <span class="text-danger">@error('audio_visual'){{$message}} @enderror</span>
             </div>
             <p></p>
             <div class="form-group">
                 <label><h6>Live casting</h6></label>
                 <select class="form-select" name="live_casting" aria-label="Default select example" required>
-                    <option disabled selected>Select</option>
+                    <option value="">Select</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
+                <span class="text-danger">@error('live_casting'){{$message}} @enderror</span>
             </div>
             <p></p>
             <div class="form-group">

@@ -16,9 +16,9 @@ class CreateWeddingEventModelsTable extends Migration
         Schema::create('wedding_event_models', function (Blueprint $table) {
             $table->id();
             $table->string('username');
-            $table->string('start_date');
+            $table->string('from_date');
             $table->string('start_time');
-            $table->string('end_date');
+            $table->string('to_date');
             $table->string('end_time');
             $table->string('veg');
             $table->string('non_veg');

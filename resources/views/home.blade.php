@@ -107,6 +107,7 @@
     <div class="carousel-item active">
       <img height="175px" src="https://i1.trekearth.com/photos/18313/20180202_093457.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption">
+        <a href="/banquet_booking?ref=Trivandrum" class="btn btn-outline-light">Book Now</a>
       </div>
     </div>
     </div>
@@ -120,6 +121,7 @@
     <div class="carousel-item active">
       <img src="https://static2.tripoto.com/media/filter/tst/img/382230/TripDocument/1495744480_varkala_beach65.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption">
+        <a href="/banquet_booking?ref=Calicut" class="btn btn-outline-light">Book Now</a>
       </div>
     </div>
     </div>
@@ -133,6 +135,7 @@
     <div class="carousel-item active">
       <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/3b/12/9f/spice-harbour.jpg?w=900&h=-1&s=1" class="d-block w-100" alt="...">
       <div class="carousel-caption">
+      <a href="/banquet_booking?ref=Cochin" class="btn btn-outline-light">Book Now</a>
       </div>
     </div>
     </div>
@@ -145,8 +148,6 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img height="171px" src="https://www.chillontrip.com/admin/assets/img/holiday/main/Backwater_of_Kerala4.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption">
-      </div>
     </div>
     </div>
   </div>

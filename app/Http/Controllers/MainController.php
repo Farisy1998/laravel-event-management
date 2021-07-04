@@ -56,7 +56,7 @@ class MainController extends Controller
     function save(Request $request)
     {
         $request->validate([
-            'district'=>'required',
+            'district'=>'required|not_in:0',
             'email'=>'required|email|unique:register_models',
             'username'=>'required|unique:register_models',
             'password'=>'required|min:4|max:15',
@@ -84,7 +84,7 @@ class MainController extends Controller
 
             $register->save();
 
-            return back()->with('success','Registration successfull.');
+            return back()->with('success','Registration successfull. Please sign in.');
         }
         else
         {
@@ -192,8 +192,8 @@ class MainController extends Controller
     function wedding_banquet_save(Request $request)
     {
         $request->validate([
-            'banquet_type'=>'required',
-            'banquet_style'=>'required',
+            'banquet_type'=>'required|not_in:0',
+            'banquet_style'=>'required|not_in:0',
             'part_no'=>'required'
         ]);
 
@@ -236,17 +236,25 @@ class MainController extends Controller
     function wedding_event_save(Request $request)
     {
         $request->validate([
-            'start_date'=>'required|date|after:tomorrow',
-            'end_date'=>'required|date|after:start_date'
+            'start_time'=>'required',
+            'end_time'=>'required',
+            'veg'=>'required|not_in:0',
+            'non_veg'=>'required|not_in:0',
+            'veg_imfl'=>'required|not_in:0',
+            'non_veg_imfl'=>'required|not_in:0',
+            'ex_liquor'=>'required|not_in:0',
+            'ex_cool_drinks'=>'required|not_in:0',
+            'audio_visual'=>'required|not_in:0',
+            'live_casting'=>'required|not_in:0'
         ]);
 
         $data=RegisterModel::where('id','=',session('LoggedUser'))->first();
-
+        $date=BanquetBookingModel::where('id','=',session('LoggedUser'))->first();
         $weddingeventmodel=new WeddingEventModel();
         $weddingeventmodel->username=$data->username;
-        $weddingeventmodel->start_date=$request->start_date;
+        $weddingeventmodel->from_date=$date->from_date;
         $weddingeventmodel->start_time=$request->start_time;
-        $weddingeventmodel->end_date=$request->end_date;
+        $weddingeventmodel->to_date=$date->to_date;
         $weddingeventmodel->end_time=$request->end_time;
         $weddingeventmodel->veg=$request->veg;
         $weddingeventmodel->non_veg=$request->non_veg;
@@ -269,10 +277,6 @@ class MainController extends Controller
             return back()->with('fail','Something went wrong. Try again later.');
         }
     }
-    /*function reg_payment_save(Request $request)
-    {
-        return view('payment_save');
-    }*/
     function reg_payment_save(Request $request)
     {
         $r_data=RegisterModel::where('id','=',session('LoggedUser'))->first();
@@ -359,6 +363,7 @@ class MainController extends Controller
     {
         $request->validate([
             'email'=>'required|email',
+            'book_type'=>'required|not_in:0',
             'from_date'=>'required|date|after:tomorrow',
             'to_date'=>'required|date|after:from_date'
 
@@ -385,12 +390,6 @@ class MainController extends Controller
 
         $res_location=BanquetBookingModel::where('location','=', $request->location)->first();
 
-        if($request->location=="Select")
-        {
-            return back()->with('fail','Please select a Banquet / Venue location.');
-        }
-        else
-        {
             if($res_location==NULL)
             {
                 if($request->book_type=="Wedding banquet")
@@ -453,7 +452,6 @@ class MainController extends Controller
                     }
                 }
             }
-        }
     }
     /*function banquet_booking_save()
     {
@@ -627,9 +625,19 @@ class MainController extends Controller
 
             return view('banquet_booking', $data);
         }
+        elseif(($request->search_data=="My Bookings")||($request->search_data=="my bookings"))
+        {
+            $data=['LoggedUserInfo'=>RegisterModel::where('id','=',session('LoggedUser'))->first()];
+
+            return view('mybooking', $data);
+        }
         else
         {
             return view('404notfound');
         }
+    }
+    function myBooking()
+    {
+        return view('mybooking');
     }
 }

@@ -34,6 +34,7 @@ Route::group(['middleware'=>['UserCheck']],function(){
     Route::post('/update_profile/{id}',[MainController::class,'update_profile'])->name('update_profile');
     Route::get('/change_password/{id}',[MainController::class,'change_password'])->name('change_password');
     Route::get('/update_password/{id}',[MainController::class,'update_password'])->name('update_password');
+    Route::get('/mybooking/{id}',[MainController::class,'myBooking'])->name('myBooking');
     Route::get('/search',[MainController::class,'search'])->name('search');
     Route::get('/about',[MainController::class,'about'])->name('about');
     Route::get('/contact',[MainController::class,'contact'])->name('contact');
@@ -47,6 +48,7 @@ Route::group(['middleware'=>['UserCheck']],function(){
     Route::post('/reg_payment_save',[MainController::class,'reg_payment_save'])->name('reg_payment_save');
     Route::get('/banquet_booking',[MainController::class,'banquet_booking'])->name('banquet_booking');
     Route::post('/banquet_booking_save',[MainController::class,'banquet_booking_save'])->name('banquet_booking_save');
+    Route::post('/wedding_banquet',[MainController::class,'wedding_banquet'])->name('wedding_banquet');
     Route::post('/wedding_banquet_save',[MainController::class,'wedding_banquet_save'])->name('wedding_banquet_save');
     Route::post('/party_venue_save',[MainController::class,'party_venue_save'])->name('party_venue_save');
     Route::get('/party_event',[MainController::class,'party_event'])->name('party_event');

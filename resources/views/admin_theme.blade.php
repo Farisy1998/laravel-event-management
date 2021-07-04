@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presentup | Admin</title>
+    <link rel = "icon" href ="https://www.snapshot-booths.com/wp-content/uploads/2018/10/cropped-favicon-logo.png" type = "imagex-icon">
     <style>
       .btn-primary:hover{
         opacity: .7;

@@ -50,7 +50,7 @@
             <p></p>
             <div class="form-group">
                 <select class="form-select" name="venue_type" aria-label="Default select example" required>
-                    <option>Select</option>
+                    <option value="">Select</option>
                     <option value="Normal">Normal</option>
                     <option value="Standard">Standard</option>
                     <option value="VIP Decorated">VIP Decorated</option>
@@ -60,7 +60,7 @@
             <div class="form-group">
                 <label><h6>Party Type</h6></label>
                 <select class="form-select" name="party_type" aria-label="Default select example" required>
-                    <option>Select</option>
+                    <option value="">Select</option>
                     <option value="Birthday party">Birthday party</option>
                     <option value="Christmas party">Christmas party</option>
                     <option value="Surprise party">Surprise party</option>
@@ -79,7 +79,7 @@
             <div class="form-group">
                 <label><h6>Venue Style</h6></label>
                 <select class="form-select" name="venue_style" aria-label="Default select example" required>
-                    <option>Select</option>
+                    <option value="">Select</option>
                     <option value="Theatre Style">Theatre Style</option>
                     <option value="Boardroom Style">Boardroom Style</option>
                     <option value="U-shape Style">U-shape Style</option>

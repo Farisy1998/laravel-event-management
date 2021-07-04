@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up | Presentup</title>
+    <link rel = "icon" href ="https://www.snapshot-booths.com/wp-content/uploads/2018/10/cropped-favicon-logo.png" type = "imagex-icon">
     <style>
         *{
             margin: 0;
@@ -119,7 +120,7 @@
                     <div class="form-group">
                         <label><h5>District</h5></label>
                         <select name="district" class="form-select">
-                            <option disabled selected>Select</option>
+                            <option value="">Select</option>
                             <option value="Alappuzha">Alappuzha</option>
                             <option value="Ernakulam">Ernakulam</option>
                             <option value="Idukki">Idukki</option>

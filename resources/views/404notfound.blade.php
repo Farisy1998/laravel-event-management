@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Page not found</title>
+    <link rel = "icon" href ="https://www.snapshot-booths.com/wp-content/uploads/2018/10/cropped-favicon-logo.png" type = "imagex-icon">
     <style>
         * {
   margin:0px auto;
@@ -32,7 +33,7 @@ position: absolute;
  font-family: 'Lato', sans-serif;
 font-weight: 400;
   font-size:150px;
-color:#2c6ced;
+color:#ff1a1a;
 position: relative;
 left:-100%;
 transition: all 0.5s;
@@ -48,9 +49,9 @@ color:#9294AE;
 position: relative;
 left:100%;
 transition: all 0.5s;
-    transition-delay: 0.5s;
+    transition-delay: 0.2s;
 -webkit-transition: all 0.5s;
- -webkit-transition-delay: 0.5s;
+ -webkit-transition-delay: 0.2s;
 }
 
 .cont_aura_1 {
@@ -59,7 +60,7 @@ transition: all 0.5s;
   height: 120%;
 top:25px;
 right: -340px;
-  background-color: #2c6ced;
+  background-color: #ff3333;
 box-shadow: 0px 0px  60px  20px  0px;
 -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -71,7 +72,7 @@ box-shadow: 0px 0px  60px  20px  0px;
   height: 300px;
 right:-10%;
 bottom:-301px;
- background-color: #1252cf;
+ background-color: #e60000;
 box-shadow: 0px 0px 60px 10px 0px,0px 0px  20px  0px  rgba(0,0,0,0.1);
   z-index:5;
 transition: all 0.5s;
