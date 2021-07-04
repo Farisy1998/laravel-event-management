@@ -8,7 +8,6 @@
     background-color: #f1f1f1;
     }
     .view-card{
-    width: 1200px;
     border-radius: 4px;
     margin: auto;
     background: #fff;
@@ -16,21 +15,27 @@
     }
 </style>
 <br>
-<div class="view-card">
 <br>
 <center><font color="black"><h3>My Bookings</h3></font></center>
+<br>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-sm-4 col-md-12 col-lg-12">
-                <font color="black"><b><hr></b></font>
-                <table class="table">
-                    <tr>
-                        <th>zcxvkz</th>
-                        <th>lkhcnc</th>
-                    </tr>
-                </table>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="view-card">
+                    <table class="table">
+                        <tr>
+                            <th>zcxvkz</th>
+                            <th>lkhcnc</th>
+                            <th>jkdffjkalfk</th>
+                        </tr>
+                        <tr>
+                            <td>dsvdsvdfdds</td>
+                            <td>ndbjhdbgjhk</td>
+                            <td>nbdvfhdfbjdb</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
