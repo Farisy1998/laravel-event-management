@@ -636,8 +636,11 @@ class MainController extends Controller
             return view('404notfound');
         }
     }
-    function myBooking()
+    function myBooking($id)
     {
-        return view('mybooking');
+        $user_data=RegisterModel::find($id);
+        $datas=BanquetBookingModel::where('username','=',$user_data->username)->get();
+
+        return view('mybooking',compact('datas'));
     }
 }

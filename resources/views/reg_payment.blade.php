@@ -41,11 +41,11 @@
                     <label><h6>Expiration</h6></label>
                     <input type="text" class="form-control card-expiry-month" name="exp_month" placeholder="MM" required>
                     <p></p>
-                    <input type="text" class="form-control  card-expiry-year" name="exp_year" placeholder="YYY" required>
+                    <input type="text" class="form-control  card-expiry-year" name="exp_year" placeholder="YY" required>
                 </div>
                 <br>
                 <div class="d-grid gap-2">
-  <button class="btn btn-primary btn-lg" type="submit">Pay &nbsp; ₹ 250></button>
+  <button class="btn btn-primary btn-lg" type="submit">Pay &nbsp; ₹ 250</button>
 </div>
             </form>
             <br>
