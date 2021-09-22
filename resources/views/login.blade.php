@@ -113,8 +113,8 @@
                     <br>
                         <button class="btn btn-outline-primary" type="submit">Login</button>
                         <br>
-                        <!--<br>
-                        <a href="/admin_reg">Admin Registration</a>-->
+                        <br>
+                        <!--<a href="/admin_reg">Admin Registration</a>-->
                 </form>
                 <br>
                 <br>
